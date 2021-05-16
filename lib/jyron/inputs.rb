@@ -1,6 +1,23 @@
 module JYRon
+
+
+
+
+
   module Inputs
-    def from_object (obj)
+
+
+
+
+
+    INPUTS_LIST = [:from_ron, :from_json, :from_yaml, :from_object]
+    CLI_INPUTS = {:from_json => {:desc => "Input from JSON File", :banner => "<JSON FILE>"},
+                  :from_yaml => {:desc => "Input from YAML File", :banner => "<YAML FILE>"}}
+
+
+
+
+    def from_object(obj)
       @object = obj
       adapt
       return self

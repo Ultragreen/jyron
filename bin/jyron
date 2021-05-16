@@ -1,6 +1,10 @@
 
+#!/usr/bin/env ruby
+# coding: utf-8
+
 require 'jyron'
 require 'jyron/cli'
+
 include JYRon
 
-CLI.start
+CLI.start(ARGV)
