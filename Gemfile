@@ -1,0 +1,7 @@
+source "http://rubygems.org"
+gem "yard-rspec"
+gem "rspec", :require => "spec"
+gem "rake"
+gem "yard"
+gem "rdoc"
+gem "roodi"
