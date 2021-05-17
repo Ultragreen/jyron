@@ -1,0 +1,28 @@
+---
+Quiz:
+  Sport:
+    Q1:
+      Question: Which one is correct team name in NBA?
+      Options:
+      - New York Bulls
+      - Los Angeles Kings
+      - Golden State Warriros
+      - Huston Rocket
+      Answer: Huston Rocket
+  Maths:
+    Q1:
+      Question: 5 + 7 = ?
+      Options:
+      - '10'
+      - '11'
+      - '12'
+      - '13'
+      Answer: '12'
+    Q2:
+      Question: 12 - 8 = ?
+      Options:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      Answer: '4'

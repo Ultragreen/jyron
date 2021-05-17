@@ -5,6 +5,6 @@
 require 'jyron'
 require 'jyron/cli'
 
-include JYRon
+include JYRon::CLI
 
-CLI.start(ARGV)
+Binding.start(ARGV)
