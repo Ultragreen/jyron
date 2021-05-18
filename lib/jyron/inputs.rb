@@ -2,17 +2,14 @@ module JYRon
 
   module Inputs
 
-    INPUTS_LIST = [:from_ron, :from_json, :from_yaml, :from_object]
+    INPUTS_LIST = [:from_rb, :from_json, :from_yaml]
     CLI_INPUTS = {:from_json => {:desc => "Input from JSON File"},
+    :from_rb => {:desc => "Input from RB File (Use very CAREFULLY)"},
     :from_yaml => {:desc => "Input from YAML File"}}
 
     class BadInputFormat < Exception; end
 
-    def from_object(obj)
-      @object = obj
-      adapt
-      return self
-    end
+
 
     def from_yaml(string)
       begin
@@ -34,7 +31,7 @@ module JYRon
       end
     end
 
-    def from_ron(string)
+    def from_rb(string)
       eval("@object=#{string}")
       adapt
       return self

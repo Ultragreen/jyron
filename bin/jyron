@@ -7,4 +7,4 @@ require 'jyron/cli'
 
 include JYRon::CLI
 
-Binding.start(ARGV)
+CMDBinding.start(ARGV)

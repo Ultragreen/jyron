@@ -6,19 +6,32 @@ module JYRon
     include JYRon::Outputs
     include JYRon::Inputs
 
+    class MediatorOptionsFailure < Exception; end
+
     def initialize(options = {})
-      @object = options[:from_object] if options[:from_object]
-      from_yaml(options[:from_yaml]) if options[:from_yaml]
-      from_json(options[:from_json]) if options[:from_json]
       @adapters = []
-      @adapters.push(options[:adapters]).flatten! if options[:adapters]
+      if options[:adapters] then
+        @adapters.push(options[:adapters]).flatten! if options[:adapters]
+        options.delete(:adapters)
+      end
+      from = INPUTS_LIST & options.keys
+      raise MediatorOptionsFailure if from.size > 2
+      self.send from.first, options[from.first] if from.size == 1
       adapt unless @object.nil?
     end
 
 
 
+    def from_obj(obj)
+      @object = obj
+      adapt
+      return self
+    end
 
 
+    def to_obj
+      return @object
+    end
 
 
     private

@@ -4,6 +4,7 @@ require 'json'
 require 'active_support/all'
 require 'jsonpath'
 require 'thor'
+require 'mime-types'
 
 require 'jyron/helpers'
 require 'jyron/adapters'

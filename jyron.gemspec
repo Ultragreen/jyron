@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.executables = Dir["bin/*"].map!{|item| item.gsub("bin/","")}
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.add_runtime_dependency 'thor','~> 1.1.0'
+  s.add_runtime_dependency 'mime-types','~> 3.3.1'
   s.add_runtime_dependency 'jsonpath','~> 1.1.0'
   s.add_runtime_dependency 'activesupport','~> 6.1.3.2'
   s.add_development_dependency 'rake', '~> 13.0.1'

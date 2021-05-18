@@ -1,7 +1,10 @@
 module JYRon
   module Filters
-    def jsonpath!(expression)
-      if @adapters.include? :symbolyse then
+
+    FILTERS = {:jsonpath => {:desc => "Filtering with JSONPath", :banner => "<JSONPath expression"}}
+
+    def jsonpath(expression)
+      if @adapters.include? :symbolize_keys then
         res = JsonPath.new(expression, use_symbols: true).on(@object)
       else
         res = JsonPath.new(expression).on(@object)
